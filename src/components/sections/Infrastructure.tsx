@@ -45,7 +45,7 @@ export default function Infrastructure() {
   return (
     <section
       id="infrastructure"
-      className="section-padding border-t border-border bg-bg-card/30"
+      className="section-padding section-contained border-t border-border bg-bg-card/30"
     >
       <FadeIn>
         <p className="section-label">04 — Principles</p>
@@ -70,7 +70,7 @@ export default function Infrastructure() {
       </Stagger>
 
       <FadeIn delay={0.15}>
-        <div className="card p-3 sm:p-4 md:p-6 hover:border-accent/20 transition-colors duration-300 overflow-hidden">
+        <div className="card p-3 sm:p-4 md:p-6 hover:border-accent/20 transition-colors duration-300 w-full min-w-0 max-w-full overflow-hidden">
           <p className="font-mono text-[10px] sm:text-xs text-text-muted uppercase tracking-wider mb-2 text-center px-1">
             AWS architecture patterns
           </p>

@@ -10,7 +10,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="section-padding border-t border-border bg-bg-card/30"
+      className="section-padding section-contained border-t border-border bg-bg-card/30"
     >
       <FadeIn>
         <p className="section-label">02 — Architecture work</p>

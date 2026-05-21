@@ -33,7 +33,7 @@ const items = [
 
 export default function Contributions() {
   return (
-    <section className="section-padding border-t border-border !py-12 sm:!py-16">
+    <section className="section-padding section-contained border-t border-border !py-12 sm:!py-16">
       <FadeIn>
         <p className="section-label">Cross-cutting</p>
         <h2 className="font-serif text-xl sm:text-2xl text-text-hi italic mb-6 sm:mb-8">

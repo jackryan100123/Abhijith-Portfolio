@@ -21,7 +21,7 @@ export default function DiagramFrame({
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : {}}
       transition={{ duration: 0.5 }}
-      className="rounded-lg border border-border bg-bg-surface/80 p-3 sm:p-4 w-full max-w-full"
+      className="rounded-lg border border-border bg-bg-surface/80 p-3 sm:p-4 w-full min-w-0 max-w-full overflow-hidden"
     >
       <p className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-text-muted text-center mb-1 px-1">
         {title}

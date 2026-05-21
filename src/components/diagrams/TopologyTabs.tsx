@@ -14,7 +14,7 @@ export default function TopologyTabs() {
   const [active, setActive] = useState<"server" | "serverless">("server");
 
   return (
-    <div>
+    <div className="w-full min-w-0 max-w-full overflow-hidden">
       <div className="flex flex-col sm:flex-row flex-wrap gap-2 justify-center mb-4 sm:mb-6">
         {tabs.map((tab) => (
           <button

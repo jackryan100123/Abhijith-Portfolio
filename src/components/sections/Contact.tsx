@@ -27,7 +27,7 @@ export default function Contact() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="contact" className="section-padding border-t border-border pb-20 sm:pb-28 md:pb-32 safe-bottom">
+    <section id="contact" className="section-padding section-contained border-t border-border pb-20 sm:pb-28 md:pb-32 safe-bottom">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 24 }}

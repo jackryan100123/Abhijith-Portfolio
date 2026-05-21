@@ -82,25 +82,43 @@ body {
   @apply border-accent-3/30 text-accent-3 bg-accent-3/5;
 }
 
-/* Scrollable diagrams on small screens */
+/* Contain wide content (projects, diagrams) within viewport */
+.section-contained {
+  @apply w-full min-w-0 max-w-full overflow-x-hidden;
+}
+
+.project-card {
+  @apply w-full min-w-0 max-w-full overflow-hidden;
+}
+
+/* Scrollable diagrams — scroll stays inside box, never widens the page */
 .diagram-scroll {
-  @apply overflow-x-auto overscroll-x-contain -mx-1 sm:mx-0;
+  @apply w-full min-w-0 max-w-full overflow-x-auto overscroll-x-contain;
   -webkit-overflow-scrolling: touch;
+  contain: inline-size;
 }
 
 .diagram-scroll svg {
-  @apply w-full h-auto;
-  min-width: 520px;
+  display: block;
+  height: auto;
+  width: 100%;
+  min-width: 480px;
+  max-width: none;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .diagram-scroll svg {
     min-width: 0;
+    max-width: 100%;
   }
 }
 
 .diagram-hint {
-  @apply font-mono text-[9px] text-text-dim text-center mt-2 sm:hidden;
+  @apply font-mono text-[9px] text-text-dim text-center mt-2 px-2 md:hidden;
+}
+
+.diagram-panel {
+  @apply w-full min-w-0 max-w-full overflow-hidden;
 }
 
 @keyframes pulse-dot {
