@@ -131,7 +131,7 @@ export default function ETLPipeline() {
       title="Real-time operations intelligence pipeline"
       subtitle="Streaming ingest → async enrichment → sub-second dashboard refresh"
     >
-      <svg viewBox="0 0 760 320" className="w-full min-w-[640px] h-auto">
+      <svg viewBox="0 0 760 320" className="w-full h-auto">
         <defs>
           <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
             <path d="M0,0 L6,3 L0,6" fill="#4ade80" />

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   IconChartBar,
   IconShieldLock,
@@ -53,11 +52,10 @@ export default function Infrastructure() {
         <h2 className="section-title">How I design systems</h2>
       </FadeIn>
 
-      <Stagger className="grid md:grid-cols-3 gap-6 mb-12" stagger={0.1}>
+      <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12" stagger={0.1}>
         {philosophies.map((p) => (
-          <motion.div
+          <div
             key={p.title}
-            whileHover={{ y: -6, transition: { duration: 0.2 } }}
             className={`card ${p.border} ${p.bg} ${p.hover} transition-colors duration-300`}
           >
             <p.icon className={`w-8 h-8 ${p.color} mb-4`} stroke={1.5} />
@@ -67,16 +65,16 @@ export default function Infrastructure() {
             <p className="font-mono text-xs text-text-muted leading-relaxed">
               {p.principle}
             </p>
-          </motion.div>
+          </div>
         ))}
       </Stagger>
 
       <FadeIn delay={0.15}>
-        <div className="card p-4 md:p-6 hover:border-accent/20 transition-colors duration-300">
-          <p className="font-mono text-xs text-text-muted uppercase tracking-wider mb-2 text-center">
+        <div className="card p-3 sm:p-4 md:p-6 hover:border-accent/20 transition-colors duration-300 overflow-hidden">
+          <p className="font-mono text-[10px] sm:text-xs text-text-muted uppercase tracking-wider mb-2 text-center px-1">
             AWS architecture patterns
           </p>
-          <p className="font-mono text-[10px] text-text-dim text-center mb-6 max-w-2xl mx-auto">
+          <p className="font-mono text-[9px] sm:text-[10px] text-text-dim text-center mb-4 sm:mb-6 max-w-2xl mx-auto px-1 leading-relaxed">
             Two reference topologies — server-based microservices vs serverless event-driven.
             VPC segmentation, multi-AZ, 3-tier data plane, and scaling strategies per workload.
           </p>

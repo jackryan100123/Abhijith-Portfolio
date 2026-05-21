@@ -36,10 +36,8 @@ export default function WorkEntry({
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <motion.article
-      whileHover={{ y: -2 }}
-      transition={{ type: "spring", stiffness: 400, damping: 28 }}
-      className={`card border-l-2 ${accentMap[accent]} transition-colors duration-300`}
+    <article
+      className={`card border-l-2 ${accentMap[accent]} transition-colors duration-300 md:hover:-translate-y-0.5`}
     >
       <button
         type="button"
@@ -49,10 +47,10 @@ export default function WorkEntry({
       >
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h3 className="font-serif text-xl md:text-2xl text-text-hi italic">
+            <h3 className="font-serif text-lg sm:text-xl md:text-2xl text-text-hi italic leading-snug pr-2">
               {title}
             </h3>
-            <p className="font-mono text-sm text-accent mt-1">{subtitle}</p>
+            <p className="font-mono text-xs sm:text-sm text-accent mt-1">{subtitle}</p>
             <p className="font-mono text-xs text-text-muted mt-3 leading-relaxed max-w-2xl">
               {impact}
             </p>
@@ -67,7 +65,7 @@ export default function WorkEntry({
         </div>
       </button>
 
-      <div className="mt-6 grid md:grid-cols-2 gap-6">
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         <div>
           <p className="font-mono text-[10px] uppercase tracking-widest text-text-dim mb-3">
             Architecture decisions
@@ -117,6 +115,6 @@ export default function WorkEntry({
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.article>
+    </article>
   );
 }

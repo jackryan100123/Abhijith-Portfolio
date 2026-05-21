@@ -1,4 +1,4 @@
-# Abhijith R — Portfolio
+# Abhijith Menon — Portfolio
 
 Minimalist, architecture-first portfolio built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
 
@@ -21,14 +21,12 @@ Place your files in `public/assets/`:
 | CV PDF | `public/assets/Abhijith_CV.pdf` |
 | Award photo (optional) | `public/assets/award.jpg` |
 
-## Deploy
+## Deploy to Vercel (free)
 
-```bash
-npm run build
-npx vercel --prod
-```
+Full guide: **[DEPLOY.md](./DEPLOY.md)**
 
-Recommended domain: `abhijithr.dev` or `abhijith.engineer`
+1. Push to GitHub → [Abhijith-Portfolio](https://github.com/jackryan100123/Abhijith-Portfolio)
+2. [vercel.com](https://vercel.com) → **Add Project** → import repo → **Deploy**
 
 ## Project structure
 

@@ -8,7 +8,7 @@ export default function BulkIngestionPipeline() {
       title="Multi-terabyte forensic dump ingestion"
       subtitle="Resumable chunked uploads · backpressure · integrity at scale"
     >
-      <svg viewBox="0 0 760 340" className="w-full min-w-[640px] h-auto">
+      <svg viewBox="0 0 760 340" className="w-full h-auto">
         <defs>
           <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
             <path d="M0,0 L6,3 L0,6" fill="#fb923c" />

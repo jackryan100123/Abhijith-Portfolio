@@ -86,7 +86,7 @@ export default function SkillsRadar() {
   };
 
   return (
-    <div ref={ref} className="w-full max-w-md mx-auto aspect-square">
+    <div ref={ref} className="w-full max-w-[280px] sm:max-w-md mx-auto aspect-square min-h-[240px] sm:min-h-0">
       <Radar data={data} options={options} />
     </div>
   );

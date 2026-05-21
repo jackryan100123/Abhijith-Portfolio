@@ -18,12 +18,15 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background-color: var(--bg);
   color: var(--text-base);
   font-family: var(--font-jetbrains-mono), monospace;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
@@ -31,29 +34,40 @@ body {
   color: var(--text-hi);
 }
 
+/* Safe areas for notched phones */
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
 .section-padding {
-  @apply px-6 py-24 md:px-12 lg:px-24 max-w-6xl mx-auto;
+  @apply px-4 py-16 sm:px-6 sm:py-20 md:px-12 md:py-24 lg:px-24 max-w-6xl mx-auto w-full;
 }
 
 .section-label {
-  @apply font-mono text-xs uppercase tracking-[0.2em] text-text-muted mb-4;
+  @apply font-mono text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] text-text-muted mb-3 sm:mb-4;
 }
 
 .section-title {
-  @apply font-serif text-3xl md:text-4xl text-text-hi italic mb-12;
+  @apply font-serif text-2xl sm:text-3xl md:text-4xl text-text-hi italic mb-8 sm:mb-12 leading-tight;
 }
 
 .card {
-  @apply bg-bg-card border border-border rounded-lg p-6;
+  @apply bg-bg-card border border-border rounded-lg p-4 sm:p-6;
   transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+@media (hover: hover) {
+  .card:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  }
 }
 
 .badge {
-  @apply inline-flex items-center px-2.5 py-0.5 rounded text-xs font-mono border border-border text-text-muted;
+  @apply inline-flex items-center px-2 py-0.5 sm:px-2.5 rounded text-[10px] sm:text-xs font-mono border border-border text-text-muted;
 }
 
 .badge-accent {
@@ -66,6 +80,27 @@ body {
 
 .badge-orange {
   @apply border-accent-3/30 text-accent-3 bg-accent-3/5;
+}
+
+/* Scrollable diagrams on small screens */
+.diagram-scroll {
+  @apply overflow-x-auto overscroll-x-contain -mx-1 sm:mx-0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.diagram-scroll svg {
+  @apply w-full h-auto;
+  min-width: 520px;
+}
+
+@media (min-width: 640px) {
+  .diagram-scroll svg {
+    min-width: 0;
+  }
+}
+
+.diagram-hint {
+  @apply font-mono text-[9px] text-text-dim text-center mt-2 sm:hidden;
 }
 
 @keyframes pulse-dot {
@@ -84,11 +119,8 @@ body {
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
+/* Prevent long words/URLs from breaking layout */
+.break-safe {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }

@@ -8,7 +8,7 @@ export default function CICDPipeline() {
       title="Enterprise DevSecOps — on-prem, air-gap ready"
       subtitle="NIST-aligned pipeline · private registry · signed artifacts · policy-as-code gates"
     >
-      <svg viewBox="0 0 900 420" className="w-full min-w-[720px] h-auto">
+      <svg viewBox="0 0 900 420" className="w-full h-auto">
         <defs>
           <marker id="ci-arrow-g" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
             <path d="M0,0 L6,3 L0,6" fill="#4ade80" />

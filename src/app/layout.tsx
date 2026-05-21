@@ -17,6 +17,12 @@ const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0d0d0d",
+};
+
 export const metadata: Metadata = {
   title: SITE.title,
   description:
@@ -54,9 +60,9 @@ export default function RootLayout({
       lang="en"
       className={`${jetbrainsMono.variable} ${instrumentSerif.variable}`}
     >
-      <body className="antialiased">
+      <body className="antialiased min-h-screen overflow-x-hidden">
         <Nav />
-        {children}
+        <main className="w-full overflow-x-hidden">{children}</main>
       </body>
     </html>
   );

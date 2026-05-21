@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   IconShieldLock,
   IconTopologyStar,
@@ -34,19 +33,18 @@ const items = [
 
 export default function Contributions() {
   return (
-    <section className="section-padding border-t border-border py-16">
+    <section className="section-padding border-t border-border !py-12 sm:!py-16">
       <FadeIn>
         <p className="section-label">Cross-cutting</p>
-        <h2 className="font-serif text-2xl text-text-hi italic mb-8">
+        <h2 className="font-serif text-xl sm:text-2xl text-text-hi italic mb-6 sm:mb-8">
           Other engineering contributions
         </h2>
       </FadeIn>
 
-      <Stagger className="grid md:grid-cols-3 gap-4" stagger={0.08}>
+      <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" stagger={0.08}>
         {items.map((item) => (
-          <motion.div
+          <div
             key={item.title}
-            whileHover={{ y: -4 }}
             className={`card ${item.border} transition-colors duration-300`}
           >
             <item.icon className={`w-7 h-7 ${item.color} mb-3`} stroke={1.5} />
@@ -54,7 +52,7 @@ export default function Contributions() {
             <p className="font-mono text-xs text-text-muted leading-relaxed">
               {item.body}
             </p>
-          </motion.div>
+          </div>
         ))}
       </Stagger>
     </section>

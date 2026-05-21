@@ -136,7 +136,6 @@ function ProjectCard({
       initial={{ opacity: 0, y: 32 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      whileHover={{ y: project.featured ? 0 : -3 }}
       className={`card group ${
         project.featured
           ? "border-accent-2/30 bg-gradient-to-br from-accent-2/5 via-bg-card to-bg-card ring-1 ring-accent-2/10"
@@ -164,11 +163,24 @@ function ProjectCard({
         )}
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-6">
-        <div className="flex-1">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <h3 className="font-serif text-xl md:text-2xl text-text-hi italic">
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+        {project.screenshot && (
+          <div className="w-full max-w-sm mx-auto lg:max-w-none lg:w-56 lg:mx-0 shrink-0 order-first lg:order-last">
+            <div className="relative aspect-video sm:aspect-[4/3] lg:aspect-square rounded-lg border border-border bg-bg-surface overflow-hidden">
+              <Image
+                src={project.screenshot}
+                alt={`${project.title} dashboard screenshot`}
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 90vw, 224px"
+              />
+            </div>
+          </div>
+        )}
+        <div className="flex-1 min-w-0 order-last lg:order-first">
+          <div className="flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <h3 className="font-serif text-lg sm:text-xl md:text-2xl text-text-hi italic leading-snug">
                 {project.title}
               </h3>
               <p
@@ -248,20 +260,6 @@ function ProjectCard({
             ))}
           </div>
         </div>
-
-        {project.screenshot && (
-          <div className="lg:w-56 shrink-0">
-            <div className="relative aspect-video lg:aspect-square rounded-lg border border-border bg-bg-surface overflow-hidden">
-              <Image
-                src={project.screenshot}
-                alt={`${project.title} dashboard screenshot`}
-                fill
-                className="object-cover object-center"
-                sizes="(max-width: 1024px) 100vw, 224px"
-              />
-            </div>
-          </div>
-        )}
       </div>
 
       {project.diagram && (
@@ -306,7 +304,7 @@ export default function Projects() {
       <FadeIn>
         <p className="section-label">03 — Projects</p>
         <h2 className="section-title">What I&apos;m building</h2>
-        <p className="font-mono text-sm text-text-muted -mt-8 mb-12 max-w-xl">
+        <p className="font-mono text-xs sm:text-sm text-text-muted -mt-6 sm:-mt-8 mb-8 sm:mb-12 max-w-xl">
           Deep dives on architecture — expand any card for the full system diagram.
         </p>
       </FadeIn>

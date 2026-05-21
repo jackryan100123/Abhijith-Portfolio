@@ -15,7 +15,7 @@ export default function Experience() {
       <FadeIn>
         <p className="section-label">02 — Architecture work</p>
         <h2 className="section-title">Systems I designed & shipped</h2>
-        <p className="font-mono text-sm text-text-muted -mt-8 mb-12 max-w-2xl">
+        <p className="font-mono text-xs sm:text-sm text-text-muted -mt-6 sm:-mt-8 mb-8 sm:mb-12 max-w-2xl">
           Outcome-first — the problems, the decisions, and the infra that made it work.
           No vendor names — just the engineering.
         </p>
@@ -42,7 +42,7 @@ export default function Experience() {
             defaultOpen
             accent="green"
           >
-            <div className="grid sm:grid-cols-3 gap-8 py-2 border-t border-border/50 pt-6">
+            <div className="grid grid-cols-1 min-[380px]:grid-cols-3 gap-6 sm:gap-8 py-2 border-t border-border/50 pt-6">
               <MetricCounter value={1} suffix="M+" label="Events processed daily" />
               <MetricCounter value={100} suffix="%" label="Live dashboard coverage" />
               <MetricCounter value={1} suffix="s" label="Target agg refresh" />
@@ -69,7 +69,7 @@ export default function Experience() {
             diagram={<BulkIngestionPipeline />}
             accent="orange"
           >
-            <div className="grid sm:grid-cols-3 gap-8 py-2 border-t border-border/50 pt-6">
+            <div className="grid grid-cols-1 min-[380px]:grid-cols-3 gap-6 sm:gap-8 py-2 border-t border-border/50 pt-6">
               <MetricCounter value={1} prefix="Multi-" suffix="TB" label="Per dump scale" />
               <MetricCounter value={60} suffix="%" label="Less manual ops toil" />
               <MetricCounter value={100} suffix="%" label="Integrity on resume" />

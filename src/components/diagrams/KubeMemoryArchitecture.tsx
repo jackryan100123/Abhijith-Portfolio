@@ -8,7 +8,7 @@ export default function KubeMemoryArchitecture() {
       title="KubeMemory — persistent cluster intelligence"
       subtitle="GraphRAG + LangGraph agents · zero cloud inference cost"
     >
-      <svg viewBox="0 0 800 400" className="w-full min-w-[680px] h-auto">
+      <svg viewBox="0 0 800 400" className="w-full h-auto">
         <defs>
           <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
             <path d="M0,0 L6,3 L0,6" fill="#a78bfa" />

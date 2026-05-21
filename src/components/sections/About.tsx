@@ -23,7 +23,7 @@ export default function About() {
         <h2 className="section-title">What I build</h2>
       </FadeIn>
 
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
         <FadeIn delay={0.1}>
           <div className="space-y-4 font-mono text-sm text-text-base leading-relaxed">
             <p>

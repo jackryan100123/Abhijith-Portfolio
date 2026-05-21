@@ -8,7 +8,7 @@ export default function RAGPipeline() {
       title="Legal RAG — retrieval-augmented Q&A"
       subtitle="Corpus embedding → vector search → grounded generation"
     >
-      <svg viewBox="0 0 700 220" className="w-full min-w-[560px] h-auto">
+      <svg viewBox="0 0 700 220" className="w-full h-auto">
         <defs>
           <marker id="rag-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
             <path d="M0,0 L6,3 L0,6" fill="#a78bfa" />

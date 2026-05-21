@@ -21,17 +21,20 @@ export default function DiagramFrame({
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : {}}
       transition={{ duration: 0.5 }}
-      className="rounded-lg border border-border bg-bg-surface/80 p-4 overflow-x-auto"
+      className="rounded-lg border border-border bg-bg-surface/80 p-3 sm:p-4 w-full max-w-full"
     >
-      <p className="font-mono text-[10px] uppercase tracking-widest text-text-muted text-center mb-1">
+      <p className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-text-muted text-center mb-1 px-1">
         {title}
       </p>
       {subtitle && (
-        <p className="font-mono text-[9px] text-text-dim text-center mb-4">
+        <p className="font-mono text-[8px] sm:text-[9px] text-text-dim text-center mb-3 sm:mb-4 px-1 leading-relaxed">
           {subtitle}
         </p>
       )}
-      {children}
+      <div className="diagram-scroll">
+        {children}
+      </div>
+      <p className="diagram-hint">Swipe horizontally to explore →</p>
     </motion.div>
   );
 }

@@ -49,9 +49,9 @@ export default function Hero() {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="relative section-padding pt-32 pb-24">
-        <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-center">
-          <div>
+      <div className="relative section-padding pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 sm:gap-12 items-center">
+          <div className="order-2 lg:order-1 min-w-0">
             <FadeIn>
               <div className="flex flex-wrap items-center gap-3 mb-6">
                 <span className="badge badge-accent">
@@ -63,13 +63,13 @@ export default function Hero() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl text-text-hi italic leading-tight">
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-text-hi italic leading-[1.1] break-words">
                 {SITE.name}
               </h1>
             </FadeIn>
 
             <FadeIn delay={0.15}>
-              <div className="mt-6 h-8 flex items-center font-mono text-lg md:text-xl text-text-muted">
+              <div className="mt-4 sm:mt-6 min-h-[2rem] sm:min-h-[2.25rem] flex flex-wrap items-center font-mono text-sm sm:text-lg md:text-xl text-text-muted">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={roleIndex}
@@ -94,27 +94,25 @@ export default function Hero() {
             </FadeIn>
 
             <FadeIn delay={0.25}>
-              <div className="mt-12 flex flex-wrap gap-4">
+              <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                 <motion.a
                   href="#projects"
-                  whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  className="font-mono text-sm px-6 py-3 bg-accent text-bg rounded font-medium"
+                  className="font-mono text-xs sm:text-sm px-5 sm:px-6 py-3 bg-accent text-bg rounded font-medium text-center w-full sm:w-auto"
                 >
                   View Projects
                 </motion.a>
                 <motion.a
                   href="#experience"
-                  whileHover={{ scale: 1.03, borderColor: "rgba(74,222,128,0.5)" }}
                   whileTap={{ scale: 0.98 }}
-                  className="font-mono text-sm px-6 py-3 border border-border text-text-hi rounded transition-colors hover:text-accent"
+                  className="font-mono text-xs sm:text-sm px-5 sm:px-6 py-3 border border-border text-text-hi rounded transition-colors hover:text-accent text-center w-full sm:w-auto"
                 >
                   Architecture Work
                 </motion.a>
                 <a
                   href={SITE.cvPath}
                   download={SITE.cvDownloadName}
-                  className="font-mono text-sm px-6 py-3 text-text-muted hover:text-accent transition-colors"
+                  className="font-mono text-xs sm:text-sm px-5 sm:px-6 py-3 text-text-muted hover:text-accent transition-colors text-center w-full sm:w-auto"
                 >
                   CV ↓
                 </a>
@@ -122,14 +120,13 @@ export default function Hero() {
             </FadeIn>
           </div>
 
-          <FadeIn delay={0.2} direction="left" className="flex justify-center lg:justify-end">
+          <FadeIn delay={0.2} direction="left" className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <motion.div
               className="relative"
-              whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-accent/40 via-transparent to-accent-2/30 blur-sm opacity-60" />
-              <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-border bg-bg-surface">
+              <div className="relative w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-border bg-bg-surface mx-auto">
                 <Image
                   src={SITE.photoPath}
                   alt={SITE.name}

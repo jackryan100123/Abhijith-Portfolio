@@ -19,7 +19,7 @@ export default function AwardBanner() {
       <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div className="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-accent/20 blur-3xl" />
       </div>
-      <div className="relative flex gap-4 items-start">
+      <div className="relative flex flex-col sm:flex-row gap-4 items-start">
         <div className="shrink-0 p-2.5 rounded-md bg-accent/15 border border-accent/30">
           <IconAward className="w-6 h-6 text-accent" stroke={1.5} />
         </div>

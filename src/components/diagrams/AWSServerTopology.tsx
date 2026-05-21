@@ -8,7 +8,7 @@ export default function AWSServerTopology() {
       title="Server-based · 3-tier microservices on EC2/EKS"
       subtitle="Multi-AZ VPC · public/private subnets · horizontal + vertical scaling"
     >
-      <svg viewBox="0 0 920 480" className="w-full min-w-[760px] h-auto">
+      <svg viewBox="0 0 920 480" className="w-full h-auto">
         <defs>
           <marker id="topo-g" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
             <path d="M0,0 L5,3 L0,5" fill="#4ade80" />

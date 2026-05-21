@@ -15,13 +15,13 @@ export default function TopologyTabs() {
 
   return (
     <div>
-      <div className="flex flex-wrap gap-2 justify-center mb-6">
+      <div className="flex flex-col sm:flex-row flex-wrap gap-2 justify-center mb-4 sm:mb-6">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             type="button"
             onClick={() => setActive(tab.id)}
-            className={`font-mono text-xs px-4 py-2 rounded border transition-all duration-300 ${
+            className={`font-mono text-[10px] sm:text-xs px-3 sm:px-4 py-2.5 sm:py-2 rounded border transition-all duration-300 w-full sm:w-auto text-center ${
               active === tab.id
                 ? "border-accent bg-accent/10 text-accent"
                 : "border-border text-text-muted hover:border-accent/40 hover:text-text-base"

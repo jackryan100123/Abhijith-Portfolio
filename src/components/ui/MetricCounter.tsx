@@ -48,12 +48,12 @@ export default function MetricCounter({
       transition={{ duration: 0.5 }}
       className="text-center"
     >
-      <div className="font-mono text-3xl md:text-4xl text-accent font-medium">
+      <div className="font-mono text-2xl sm:text-3xl md:text-4xl text-accent font-medium">
         {prefix}
         {display}
         {suffix}
       </div>
-      <div className="font-mono text-xs text-text-muted mt-2 uppercase tracking-wider">
+      <div className="font-mono text-[10px] sm:text-xs text-text-muted mt-2 uppercase tracking-wider leading-snug px-1">
         {label}
       </div>
     </motion.div>
