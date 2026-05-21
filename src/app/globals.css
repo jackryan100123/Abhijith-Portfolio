@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0d0d0d;
+  --bg-card: #111111;
+  --bg-surface: #161616;
+  --border: #222222;
+  --text-dim: #555555;
+  --text-muted: #888888;
+  --text-base: #cccccc;
+  --text-hi: #f0f0f0;
+  --accent: #4ade80;
+  --accent-2: #a78bfa;
+  --accent-3: #fb923c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-base);
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
+::selection {
+  background: rgba(74, 222, 128, 0.25);
+  color: var(--text-hi);
+}
+
+.section-padding {
+  @apply px-6 py-24 md:px-12 lg:px-24 max-w-6xl mx-auto;
+}
+
+.section-label {
+  @apply font-mono text-xs uppercase tracking-[0.2em] text-text-muted mb-4;
+}
+
+.section-title {
+  @apply font-serif text-3xl md:text-4xl text-text-hi italic mb-12;
+}
+
+.card {
+  @apply bg-bg-card border border-border rounded-lg p-6;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded text-xs font-mono border border-border text-text-muted;
+}
+
+.badge-accent {
+  @apply border-accent/30 text-accent bg-accent/5;
+}
+
+.badge-purple {
+  @apply border-accent-2/30 text-accent-2 bg-accent-2/5;
+}
+
+.badge-orange {
+  @apply border-accent-3/30 text-accent-3 bg-accent-3/5;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
