@@ -6,4 +6,5 @@ export const SITE = {
   cvDownloadName: "Abhijith_Menon_CV.pdf",
   photoPath: "/assets/Abhijith.png",
   faviconPath: "/assets/Abhijith.png",
+  kubeMemoryScreenshot: "/assets/k8s.png",
 } as const;

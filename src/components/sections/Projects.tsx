@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, ReactNode } from "react";
+import Image from "next/image";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
+import { SITE } from "@/lib/site";
 import { IconBrandGithub, IconChevronDown, IconBrain, IconCloud } from "@tabler/icons-react";
 import FadeIn from "@/components/ui/FadeIn";
 import KubeMemoryArchitecture from "@/components/diagrams/KubeMemoryArchitecture";
@@ -21,6 +23,7 @@ interface Project {
   diagram?: ReactNode;
   featured?: boolean;
   inProgress?: boolean;
+  screenshot?: string;
 }
 
 const projects: Project[] = [
@@ -44,6 +47,7 @@ const projects: Project[] = [
     badgeVariant: "purple",
     diagram: <KubeMemoryArchitecture />,
     featured: true,
+    screenshot: SITE.kubeMemoryScreenshot,
   },
   {
     title: "AWS Chatbot with Terraform Integration",
@@ -245,14 +249,16 @@ function ProjectCard({
           </div>
         </div>
 
-        {project.featured && (
-          <div className="lg:w-48 shrink-0">
-            <div className="relative aspect-video lg:aspect-square rounded-lg border border-dashed border-border bg-bg-surface flex items-center justify-center overflow-hidden">
-              <div className="text-center p-4">
-                <IconBrain className="w-10 h-10 text-accent-2/40 mx-auto mb-2" />
-                <p className="font-mono text-[10px] text-text-dim">screenshot</p>
-                <p className="font-mono text-[10px] text-text-dim">placeholder</p>
-              </div>
+        {project.screenshot && (
+          <div className="lg:w-56 shrink-0">
+            <div className="relative aspect-video lg:aspect-square rounded-lg border border-border bg-bg-surface overflow-hidden">
+              <Image
+                src={project.screenshot}
+                alt={`${project.title} dashboard screenshot`}
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 224px"
+              />
             </div>
           </div>
         )}
